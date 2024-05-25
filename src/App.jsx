@@ -5,14 +5,17 @@ import Counter from './components/Counter/Counter';
 import { useState } from 'react';
 import Pokemon from './components/Pokemon/Pokemon';
 import RegisterForm from './components/Form/RegisterForm';
+import Checkbox from './components/Profile/Checkbox';
 
 function App() {
 const [selectedValue, selectedAction] = useState(1);
+const checkbox = ['All', 'Coding', 'Music', 'Reading books'];
 const options = [
     { value: 1, label: 'Welcome' },
     { value: 2, label: 'Counter'},
     { value: 3, label: 'Pokemon'},
-    { value: 4, label: 'RegisterForm'}
+    { value: 4, label: 'Checkbox'},
+    { value: 5, label: 'RegisterForm'}
   ];
   let appStyle1 = { backgroundColor: "red" };
   let appStyle2 = { backgroundColor: 'yellow' };
@@ -59,6 +62,11 @@ const options = [
         </div>
       )}
       {selectedValue === 4 && (
+        <div className="checkbox">
+          <Checkbox options={checkbox}/>
+        </div>
+      )}
+      {selectedValue === 5 && (
         <div className="registerForm">
           <RegisterForm />
         </div>
